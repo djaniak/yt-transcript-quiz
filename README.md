@@ -1,6 +1,6 @@
 # YouTube Transcript Quiz Generator
 
-Generate Anki flashcards from YouTube video transcripts using Google Gemini.
+Generate Anki flashcards from YouTube video transcripts.
 
 ## Setup
 
