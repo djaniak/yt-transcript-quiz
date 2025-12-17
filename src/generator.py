@@ -74,16 +74,17 @@ class QuizGenerator:
 
     def _generate_batch(self, text: str, num_questions: int) -> list[QuizQuestion]:
         prompt = f"""
-        You are an expert University Professor creating a rigorous exam to test deep conceptual understanding of the following material.
-        The content is technical (e.g., Computer Science, LLMs, Mathematics).
+        You are an expert Technical Interviewer and University Professor.
+        Your goal is to create {num_questions} multiple-choice questions based on the following transcript segment.
         
-        Your Goal: Create {num_questions} high-quality multiple-choice questions based on the concepts discussed in the transcript segment.
+        The questions should be a mix of:
+        1. **Deep Conceptual Questions**: Testing "Why" and "How", trade-offs, and complex reasoning (e.g., for a senior level exam).
+        2. **Fundamental "Interview" Questions**: Testing basic definitions, core terminology, and high-level purpose (e.g., standard questions a candidate might face in a job interview about these topics).
         
-        Crucial Guidelines:
-        1. **Test Knowledge, Not Recall**: Do NOT ask "What did the speaker say?" or "What example was used?". Instead, ask about the concepts, underlying principles, and mechanisms.
-        2. **Focus on "Why" and "How"**: Questions should probe the logic, implications, trade-offs, and causality of the ideas presented.
-        3. **Synthesize**: Questions should require integrating information to find the correct answer, not just text matching.
-        4. **Plausible Distractors**: Ensure incorrect options (distractors) are conceptually relevant but arguably wrong, requiring precise understanding to rule out.
+        Guidelines:
+        - **Value Understanding over Recall**: Never ask "What did the speaker say?". Ask about the actual concepts.
+        - **Breadth and Depth**: Ensure you cover both the "basics" (what is X?) and the "implications" (what happens if we change X to Y?).
+        - **Plausible Distractors**: Incorrect options should be realistic common misconceptions or plausible-sounding but wrong technical terms.
         
         Return the result as a JSON object with a key "questions" which is a list of objects, where each object has:
         - "question": The question text
