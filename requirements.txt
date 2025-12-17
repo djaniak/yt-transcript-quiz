@@ -1,0 +1,6 @@
+youtube-transcript-api
+genanki
+openai
+rich
+typer
+pytube
