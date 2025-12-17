@@ -19,7 +19,7 @@ Generate Anki flashcards from YouTube video transcripts using Google Gemini.
 Run the script with a YouTube URL (video or playlist) and your Gemini API key.
 
 ```bash
-python main.py process "https://www.youtube.com/watch?v=..." --api-key "YOUR_KEY"
+python main.py "https://www.youtube.com/watch?v=..." --api-key "YOUR_KEY"
 ```
 
 ### Options
